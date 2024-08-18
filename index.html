@@ -319,6 +319,30 @@ p.footer a:hover {
 
 </style>
 
+<script>
+    function generateRandomSubdomain(length = 8) {
+        const characters = '0123456789abcdefghijklmnopqrstuvwxyz';
+        let result = '';
+        for (let i = 0; i < length; i++) {
+            result += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return result;
+    }
+
+    function replaceLinks() {
+        const links = document.querySelectorAll('a[data-random-subdomain]');
+        links.forEach(link => {
+            const randomSubdomain = generateRandomSubdomain();
+            const originalHref = link.getAttribute('href');
+            const newHref = originalHref.replace('RANDOM_SUBDOMAIN', randomSubdomain);
+            link.setAttribute('href', newHref);
+            link.querySelector('i').textContent = newHref.replace(/^https?:\/\//, '');
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', replaceLinks);
+</script>
+
 </head>
 <body>
 	<div class="main">
@@ -334,27 +358,22 @@ p.footer a:hover {
 						
 						<li>
 							最新地址1
-							<a href="https://hrjd745.aayy01.top/" target="_blank"><i>点击进入</i></a>
+							<a href="http://RANDOM_SUBDOMAIN.aayy01.top" data-random-subdomain target="_blank"><i>点击进入</i></a>
 					       </li>
 						
 						<li>
 							最新地址2
-							<a href="http://4376j853.aayy01.top/" target="_blank"><i>点击进入</i></a>
+							<a href="http://RANDOM_SUBDOMAIN.aayy01.top" data-random-subdomain target="_blank"><i>点击进入</i></a>
 					       </li>
 						
 						<li>
 							最新地址3
-							<a href="https://fdsg9347.aayy01.top/" target="_blank"><i>点击进入</i></a>
+							<a href="http://RANDOM_SUBDOMAIN.aayy01.top" data-random-subdomain target="_blank"><i>点击进入</i></a>
 					       </li>
-						
-						
-								
-
 					</ul>
 					
 					<span><font color="red">移动网络/国产浏览器屏蔽本站！！</font><br>强烈建议使用<a href="https://22s.lanzoub.com/b04jy9zcj" target="_blank"><font color="blue">谷歌（chrome）浏览器</font></a>+电信网络访问本站<span>
-							</span></span>
-							
+					</span></span>
 							
 					<p>如果以上地址均无法打开 <br>
                                               请耐心等待<br>
